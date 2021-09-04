@@ -3,8 +3,8 @@ import { Link, useLocation } from "wouter";
 import useGifs from "../../hooks/useGifs";
 
 import ListOfGifs from "../../components/ListOfGifs";
+import TrendigSearches from "../../components/TrendigSearches";
 
-const POPULAR_GIFS = ["Morty", "Rick"];
 
 const Home = () => {
   const [keyword, setKeyword] = useState("");
@@ -36,15 +36,8 @@ const Home = () => {
       </form>
       <h3>Ultima Busqueda</h3>
       <ListOfGifs gifs={gifs} />
-      <h3>Los gifs más populares</h3>
-      <ul>
-        {POPULAR_GIFS.map((popularGif) => (
-          <li key={popularGif}>
-            <Link to={`/search/${popularGif}`}>Gifs de {popularGif}</Link>
-          </li>
-        ))}
-      </ul>
-    </>
+      <TrendigSearches />
+      </>
   );
 };
 

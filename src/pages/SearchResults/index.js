@@ -4,14 +4,18 @@ import useGifs from "../../hooks/useGifs";
 
 const SearchResults = ({ params }) => {
   const { keyword } = params;
-  const {loading, gifs} = useGifs({keyword})
+  const { loading, gifs } = useGifs({ keyword });
 
   return (
     <div>
-        {loading 
-        ? <h1>Loading...</h1> 
-        : <ListOfGifs gifs={gifs} />
-        }
+      {loading ? (
+        <h1>Loading...</h1>
+      ) : (
+        <>
+          <h3>{decodeURI(keyword)}</h3>
+          <ListOfGifs gifs={gifs} />
+        </>
+      )}
     </div>
   );
 };
