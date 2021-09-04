@@ -1,18 +1,27 @@
-import React, { useState } from "react";
-import ListOfGifs from "./components/ListOfGifs";
+import React from "react";
 
+import Home from "./pages/Home";
+import SearchResults from "./pages/SearchResults";
+import Detail from "./pages/Detail";
+
+import StaticContext from "./context/StaticContext";
+import { GifsContextProvider } from "./context/GifsContext";
 import { Link, Route } from "wouter";
 
 function App() {
-  const [keyword, setKeyword] = useState("rick");
   return (
-    <div>
-      <section>
-        <Link to="/gif/rick">Gifs de Rick</Link>
-        <Link to="/gif/morty">Gifs de Morty</Link>
-        <Route path="/gif/:keyword" component={ListOfGifs} />
-      </section>
-    </div>
+    <StaticContext.Provider value={{ name: "Julian" }}>
+      <div>
+        <section>
+          <Link to="/"> Inicio </Link>
+          <GifsContextProvider>
+            <Route path="/" component={Home} />
+            <Route path="/search/:keyword" component={SearchResults} />
+            <Route path="/gif/:id" component={Detail} />
+          </GifsContextProvider>
+        </section>
+      </div>
+    </StaticContext.Provider>
   );
 }
 

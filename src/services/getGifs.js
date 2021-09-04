@@ -1,4 +1,4 @@
-const apiKey = process.env.REACT_APP_API_KEY;
+const apiKey = process.env.REACT_APP_PUBLIC_API_KEY;
 
 const getGifs = ({ keyword = "batman" } = {}) => {
   const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=25&offset=0&rating=g&lang=en`;
