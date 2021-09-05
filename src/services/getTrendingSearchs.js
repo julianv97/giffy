@@ -1,14 +1,14 @@
-import {API_KEY, API_URL} from './settings'
-const fromApiResponseToGifs = apiResponse => {
-  const {data = []} = apiResponse
-  
-  return data
-}
+import { API_KEY, API_URL } from "./settings";
+const fromApiResponseToGifs = (apiResponse) => {
+  const { data = [] } = apiResponse;
 
-export default function getTrendingSearchs () {
-  const apiURL = `${API_URL}/trending/searches?api_key=${API_KEY}`
+  return data;
+};
+
+export default function getTrendingSearchs() {
+  const apiURL = `${API_URL}/trending/searches?api_key=${API_KEY}`;
 
   return fetch(apiURL)
-    .then(res => res.json())
-    .then(fromApiResponseToGifs)
+    .then((res) => res.json())
+    .then(fromApiResponseToGifs);
 }

@@ -16,4 +16,4 @@ const TrendigSearches = () => {
   );
 };
 
-export default TrendigSearches
+export default TrendigSearches;
