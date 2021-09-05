@@ -11,16 +11,20 @@ const SearchResults = ({ params }) => {
   };
 
   return (
-    <div>
+    <div className="">
       {loading ? (
-        <h1>Loading...</h1>
+        <div className="">
+          <h1 className="text-white">Loading...</h1>
+        </div>
       ) : (
-        <>
-          <h3>{decodeURI(keyword)}</h3>
+        <div className="">
+          <h3 className="text-white">{decodeURI(keyword)}</h3>
           {<ListOfGifs gifs={gifs} />}
-        </>
+        </div>
       )}
-      <button onClick={handleNextPage}>Next Page</button>
+      <button onClick={handleNextPage} className="w-full bg-purple-back ">
+        Next Page
+      </button>
     </div>
   );
 };

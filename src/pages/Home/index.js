@@ -24,9 +24,9 @@ const Home = () => {
   };
 
   return (
-    <div className="">
+    <div className="bg-purple-back h-full min-h-screen">
       {/* Formik para cambiar keyword */}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="text-white">
         <input
           type="text"
           value={keyword}
@@ -34,10 +34,10 @@ const Home = () => {
           className="bg-gray-300"
         />
       </form>
-      <div className="">
-        <div>
-          <h3>Ultima Busqueda</h3>
-          <ListOfGifs gifs={gifs} />
+      <div className="flex flex-col md:flex-row bg-purple-back h-full min-h-screen">
+        <div className="flex-grow bg-purple-back h-full min-h-screen">
+          <h3 className="text-white">Ultima Busqueda</h3>
+          {<ListOfGifs gifs={gifs} />}
         </div>
         <LazyTrending />
       </div>

@@ -1,16 +1,15 @@
 import React from "react";
 import { Link } from "wouter";
+//establecer 5 colores y que cada categoria se le seleccione al azar
 
 const Category = ({ name, options = [] }) => {
   return (
-    <div>
-        <h3>
-            {name}
-        </h3>
+    <div className="text-white h-full min-h-screen bg-purple-back ">
+      <h3>{name}</h3>
       <ul>
         {options.map((option) => {
           return (
-            <li key={option}>
+            <li key={option} className="inline-block md:block pr-2">
               <Link to={`/search/${option}`}>{option}</Link>
             </li>
           );

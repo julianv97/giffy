@@ -1,14 +1,17 @@
 module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    /* minHeight: {
+      0: "0",
+      big: "12rem",
+    }, */
     extend: {
       gridTemplateColumns: {
-        // Simple 16 column grid
-       'layout': 'repeat(auto-fit, minmax(300px, 1fr))',
-
-        // Complex site-specific column configuration
-
+        layout: "repeat(auto-fit, minmax(300px, 1fr))",
+      },
+      colors: {
+        'purple-back': '#18061f',
       }
     },
   },
@@ -16,4 +19,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}
+};
