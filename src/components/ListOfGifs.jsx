@@ -1,13 +1,18 @@
 import React from "react";
 import Gif from "./Gif";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 const ListOfGifs = ({ gifs }) => {
   return (
-    <div className="grid grid-cols-layout grid-flow-row-dense gap-4 min-h-screen">
-      {gifs.map((gif) => (
-        <Gif key={gif.id} {...gif} />
-      ))}
-    </div>
+    <ResponsiveMasonry
+      columnsCountBreakPoints={{ 350: 1, 550: 2, 750: 2, 900: 3, 1050: 4 }}
+    >
+      <Masonry className="gap-4">
+        {gifs.map((gif) => (
+          <Gif key={gif.id} {...gif} />
+        ))}
+      </Masonry>
+    </ResponsiveMasonry>
   );
 };
 
