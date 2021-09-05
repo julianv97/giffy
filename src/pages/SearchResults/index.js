@@ -19,7 +19,7 @@ const SearchResults = ({ params }) => {
       ) : (
         <div className="">
           <h3 className="text-white">{decodeURI(keyword)}</h3>
-          {<ListOfGifs gifs={gifs} />}
+          <ListOfGifs gifs={gifs} />
         </div>
       )}
       <button onClick={handleNextPage} className="w-full bg-purple-back ">

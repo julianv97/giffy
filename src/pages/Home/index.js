@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useLocation } from "wouter";
 import useGifs from "../../hooks/useGifs";
-
+/* import { Formik, Field, Form } from "formik"; */
 import ListOfGifs from "../../components/ListOfGifs";
 import { LazyTrending } from "../../components/TrendingSearch/LazyTrendingSearches";
 
@@ -14,8 +14,9 @@ const Home = () => {
   const { loading, gifs } = useGifs();
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     //navegar a otra ruta
+    e.preventDefault();
+    console.log(e);
     pushLocation(`/search/${keyword}`);
   };
 
@@ -25,7 +26,16 @@ const Home = () => {
 
   return (
     <div className="bg-purple-back h-full min-h-screen">
-      {/* Formik para cambiar keyword */}
+      {/* <Formik
+        initialValues={{
+          keyword: "",
+        }}
+        onSubmit={(values) => handleSubmit(values.keyword)}
+      >
+        <Form>
+          <Field id="keyword" name="keyword" placeholder="" />
+        </Form>
+      </Formik> */}
       <form onSubmit={handleSubmit} className="text-white">
         <input
           type="text"
