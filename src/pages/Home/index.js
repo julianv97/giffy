@@ -16,7 +16,6 @@ const Home = () => {
   const handleSubmit = (e) => {
     //navegar a otra ruta
     e.preventDefault();
-    console.log(e);
     pushLocation(`/search/${keyword}`);
   };
 
