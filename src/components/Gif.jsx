@@ -37,5 +37,3 @@ const Gif = ({ title, id, url, isSingle }) => {
 
 export default Gif;
 
-/* relative min-h-big min-w-big border-4 border-transparent */
-/* hover:border-pink-500 */
