@@ -11,7 +11,7 @@ const TrendigSearches = () => {
 
   return (
     <div>
-      <Category options={trends} name="Tendencias" />
+      <Category options={trends} name="Trending" />
     </div>
   );
 };

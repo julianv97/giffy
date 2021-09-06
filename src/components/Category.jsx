@@ -1,16 +1,32 @@
 import React from "react";
 import { Link } from "wouter";
-//establecer 5 colores y que cada categoria se le seleccione al azar
+
+const categotyStyles = [
+  "bg-brand-red text-white",
+  "bg-brand-blue text-black",
+  "bg-brand-green text-black",
+  "bg-brand-purple text-white",
+  "bg-brand-yellow text-black",
+];
 
 const Category = ({ name, options = [] }) => {
   return (
-    <div className="text-white ">
-      <h3>{name}</h3>
+    <div className=" lg:flex lg:flex-col ">
+      <h3 className="text-white text-xl md:text-3xl">{name}</h3>
       <ul>
         {options.map((option) => {
           return (
-            <li key={option} className="inline-block md:block pr-2">
-              <Link to={`/search/${option}`}>{option}</Link>
+            <li key={option} className="inline-block md:block mx-1 my-2 lg:m-3">
+              <Link
+                to={`/search/${option}`}
+                className={`${
+                  categotyStyles[
+                    Math.floor(Math.random() * categotyStyles.length)
+                  ]
+                } p-1`}
+              >
+                {option}
+              </Link>
             </li>
           );
         })}
@@ -20,3 +36,5 @@ const Category = ({ name, options = [] }) => {
 };
 
 export default Category;
+
+/* inline-block md:block mt-2 pr-2  */

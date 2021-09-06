@@ -4,7 +4,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 const ListOfGifs = ({ gifs }) => {
   return (
-    <div className="">
+    <div className="w-full">
       <ResponsiveMasonry
         columnsCountBreakPoints={{
           350: 1,

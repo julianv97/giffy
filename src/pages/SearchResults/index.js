@@ -25,15 +25,18 @@ const SearchResults = ({ params }) => {
   }, [isNearScreen, debounceHandleNextPage]);
 
   return (
-    <div className="">
+    <div className="px-2">
       {loading ? (
-        <div className="">
+        <div>
           <h1 className="text-white">Loading...</h1>
         </div>
       ) : (
-        <div className="">
+        <div>
           <h3 className="text-white">{decodeURI(keyword)}</h3>
           <ListOfGifs gifs={gifs} />
+          {/* Este div visor es para que cuando se renderice, se cargué la siguente página
+            de gifs y así lograr el scroll infinito
+          */}
           <div id="visor" ref={externalRef}></div>
         </div>
       )}

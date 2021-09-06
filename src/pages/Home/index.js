@@ -19,19 +19,21 @@ const Home = () => {
 
   return (
     <div className="bg-purple-back h-full min-h-screen">
-      <Formik
-        initialValues={{
-          keyword: "",
-        }}
-        onSubmit={(values) => handleSubmit(values.keyword)}
-      >
-        <Form>
-          <Field id="keyword" name="keyword" placeholder="" />
-        </Form>
-      </Formik>
-      <div className="flex flex-col md:flex-row bg-purple-back h-full min-h-screen">
-        <div className="flex-grow bg-purple-back h-full min-h-screen">
-          <h3 className="text-white">Ultima Busqueda</h3>
+      <div className="sticky top-0 z-10 bg-purple-back py-4 w-full flex flex-col items-center">
+        <Formik
+          initialValues={{
+            keyword: "",
+          }}
+          onSubmit={(values) => handleSubmit(values.keyword)}
+        >
+          <Form>
+            <Field id="keyword" name="keyword" placeholder="Search a gif..." />
+          </Form>
+        </Formik>
+      </div>
+      <div className="flex flex-col md:flex-row bg-purple-back h-full min-h-screen w-full px-2">
+        <div className="flex-grow bg-purple-back h-full min-h-screen ">
+          <h3 className="text-white text-2xl">Last Search</h3>
           {<ListOfGifs gifs={gifs} />}
         </div>
         <LazyTrending />

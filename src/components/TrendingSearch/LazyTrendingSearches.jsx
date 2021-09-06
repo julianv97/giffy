@@ -7,7 +7,7 @@ export const LazyTrending = () => {
   const { isNearScreen, fromRef } = useNearScreen({ distance: "20px" });
 
   return (
-    <div ref={fromRef} className="ml-10 ">
+    <div ref={fromRef}>
       <Suspense fallback={null}>
         {isNearScreen ? <TrendigSearches /> : null}
       </Suspense>
