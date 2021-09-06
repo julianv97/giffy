@@ -27,7 +27,18 @@ const Home = () => {
           onSubmit={(values) => handleSubmit(values.keyword)}
         >
           <Form>
-            <Field id="keyword" name="keyword" placeholder="Search a gif..." />
+            <Field
+              id="keyword"
+              name="keyword"
+              placeholder="Search a gif..."
+              className="py-2 px-1"
+            />
+            <button
+              type="submit"
+              className="bg-brand-purple hover:bg-brand-blue py-2 px-2"
+            >
+              Search
+            </button>
           </Form>
         </Formik>
       </div>
