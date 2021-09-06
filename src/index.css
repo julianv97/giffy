@@ -1,12 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.root{
-    background:#18061f;
-    height:100%;
-    min-height: 100vh;
 
-
-}
 

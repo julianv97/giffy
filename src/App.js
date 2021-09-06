@@ -10,7 +10,7 @@ import { Link, Route } from "wouter";
 function App() {
   return (
     <GifsContextProvider>
-      <div className="bg-purple-back h-full min-h-screen ">
+      <div className="bg-purple-back h-full min-h-screen font-manrope">
         <section className="bg-purple-back  h-full min-h-screen">
           <Link to="/" className="text-white"> Inicio </Link>
           <Route path="/" component={Home} />
