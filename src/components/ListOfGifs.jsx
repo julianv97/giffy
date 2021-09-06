@@ -17,7 +17,7 @@ const ListOfGifs = ({ gifs }) => {
       >
         <Masonry className="gap-2">
           {gifs.map((gif) => (
-            <Gif key={gif.id} {...gif} />
+            <Gif key={gif.id} isSingle={false} {...gif} />
           ))}
         </Masonry>
       </ResponsiveMasonry>

@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { useLocation } from "wouter";
 import useGifs from "../../hooks/useGifs";
-/* import { Formik, Field, Form } from "formik"; */
+import { Formik, Field, Form } from "formik";
 import ListOfGifs from "../../components/ListOfGifs";
 import { LazyTrending } from "../../components/TrendingSearch/LazyTrendingSearches";
 
 const Home = () => {
-  const [keyword, setKeyword] = useState("");
   // eslint-disable-next-line no-unused-vars
   const [path, pushLocation] = useLocation();
 
@@ -15,17 +14,12 @@ const Home = () => {
 
   const handleSubmit = (e) => {
     //navegar a otra ruta
-    e.preventDefault();
-    pushLocation(`/search/${keyword}`);
-  };
-
-  const handleChange = (e) => {
-    setKeyword(e.target.value);
+    pushLocation(`/search/${e}`);
   };
 
   return (
     <div className="bg-purple-back h-full min-h-screen">
-      {/* <Formik
+      <Formik
         initialValues={{
           keyword: "",
         }}
@@ -34,15 +28,7 @@ const Home = () => {
         <Form>
           <Field id="keyword" name="keyword" placeholder="" />
         </Form>
-      </Formik> */}
-      <form onSubmit={handleSubmit} className="text-white">
-        <input
-          type="text"
-          value={keyword}
-          onChange={handleChange}
-          className="bg-gray-300"
-        />
-      </form>
+      </Formik>
       <div className="flex flex-col md:flex-row bg-purple-back h-full min-h-screen">
         <div className="flex-grow bg-purple-back h-full min-h-screen">
           <h3 className="text-white">Ultima Busqueda</h3>

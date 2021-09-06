@@ -4,7 +4,7 @@ import { Link } from "wouter";
 
 const Category = ({ name, options = [] }) => {
   return (
-    <div className="text-white h-full min-h-screen bg-purple-back ">
+    <div className="text-white ">
       <h3>{name}</h3>
       <ul>
         {options.map((option) => {
